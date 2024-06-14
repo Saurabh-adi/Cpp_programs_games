@@ -1,0 +1,70 @@
+//cpp program for making a Calculator
+
+#include <iostream>
+using namespace std;
+
+int sum(float n1, float n2);
+int sub(float n1, float n2);
+int prod(float n1, float n2);
+int divi(float n1, float n2);
+
+int main()
+{
+    char op;
+    float n1, n2;
+    cout << "| Following is the program to operate two numbers |\n";
+    cout << "\nEnter what operation you want to perform:\n" <<"\n--Type the operators(+,-,*,/) and not the numbers(1,2,3,4)--" <<endl;
+    cout << "\n1.+(Addition)\n"
+         << "2.- (Subtraction)\n"
+         << "3.* (Multiplication)\n" 
+         << "4./ (Division)\n"
+         << endl;
+    cin >> op;
+    cout << endl;
+    cout << "Enter the number 1:" << endl;
+    cin >> n1;
+    cout << "Enter the number 2:" << endl;
+    cin >> n2;
+    switch (op)
+    {
+    case '+':
+        cout << "The sum of " << n1 << " and " << n2 << " is " << sum(n1, n2) << endl;
+        break;
+    case '-':
+        cout << "The difference of " << n1 << " and " << n2 << " is " << sub(n1, n2) << endl;
+        break;
+    case '*':
+        cout << "The product of " << n1 << " and " << n2 << " is " << prod(n1, n2) << endl;
+        break;
+    case '/':
+        if (n2 != 0)
+        {
+            cout << "The division of " << n1 << " and " << n2 << " is " << divi(n1, n2) << endl;
+            break;
+        }
+
+        else
+            cout << "runtime error, division by zero is not possible";
+        break;
+    default:
+        cout << "Wrong option opted";
+    }
+    return 0;
+}
+
+int sum(float n1, float n2)
+{
+    return n1 + n2;
+}
+int sub(float n1, float n2)
+{
+    return n1 - n2;
+}
+int prod(float n1, float n2)
+{
+    return n1 * n2;
+}
+int divi(float n1, float n2)
+{
+    return n1 / n2;
+}
