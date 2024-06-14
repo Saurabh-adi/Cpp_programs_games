@@ -1,1 +1,154 @@
+// CPP program for a Number guessing game
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+    char rep_game = 'y';
+    cout << "\n\n*********Welcome to the Number Guessing Game*********\n" << endl;
+    cout << "-> You have to guess a number between 1 and 100\n" << endl;
+    cout << "->You have limited choices to guess the correct number\n" << endl;
+    cout << "1.Difficult (2 choices) \n2.Medium (4 choices) \n3.Easy (6 choices)\n";
+
+    while (rep_game == 'y')
+    {
+        cout << "Enter difficulty level:\n";
+        cout << "1 for Difficult!\n";
+        cout << "2 for Medium!\n";
+        cout << "3 for Easy!\n";
+        cout << "0 for ending the game\n" << endl;
+
+        int diffchoice, playerchoice;
+        cout << "Enter your choice for playing the game:\n";
+        cin >> diffchoice;
+        srand(time(0));
+        int random2 = 1 + (rand() % 100);
+
+        if (diffchoice == 1)
+        {
+            cout << "\nYou have 2 chances for finding the hidden number between 1 to 100" << endl;
+            int choicesleft = 2;
+            for (int i = 0; i < 2; i++)
+            {
+                cout << "Enter the number: ";
+                cin >> playerchoice;
+                if (playerchoice == random2)
+                {
+                    cout << "Well played champ! You win, " << playerchoice << " is the secret number" << endl;
+                    cout << "********Thanks for playing...." << endl;
+                    cout << "Play the game again with us!!\n" << endl;
+                    break;
+                }
+                else
+                {
+                    cout << "No " << playerchoice << " is not the right number\n";
+                    if (playerchoice > random2)
+                    {
+                        cout << "The secret number is smaller than the number you have guessed" << endl;
+                    }
+                    else
+                    {
+                        cout << "The secret number is greater than the number you have guessed" << endl;
+                    }
+                    choicesleft--;
+                    cout << choicesleft << " choices left.\n";
+                    if (choicesleft == 0)
+                    {
+                        cout << "So sad you couldn't find the hidden number, it was " << random2 << " You lost!!\n\n";
+                    }
+                }
+            }
+            cout << "Wanna play again to win the game 'y' or 'n':\n";
+            cin >> rep_game;
+        }
+        else if (diffchoice == 2)
+        {
+            cout << "\nYou have 4 chances for finding the hidden number between 1 to 100" << endl;
+            int choicesleft = 4;
+            for (int i = 0; i < 4; i++)
+            {
+                cout << "Enter the number: ";
+                cin >> playerchoice;
+                if (playerchoice == random2)
+                {
+                    cout << "Well played champ! You win, " << playerchoice << " is the secret number" << endl;
+                    cout << "********Thanks for playing...." << endl;
+                    cout << "Play the game again with us!!\n" << endl;
+                    break;
+                }
+                else
+                {
+                    cout << "No " << playerchoice << " is not the right number\n";
+                    if (playerchoice > random2)
+                    {
+                        cout << "The secret number is smaller than the number you have guessed" << endl;
+                    }
+                    else
+                    {
+                        cout << "The secret number is greater than the number you have guessed" << endl;
+                    }
+                    choicesleft--;
+                    cout << choicesleft << " choices left.\n";
+                    if (choicesleft == 0)
+                    {
+                        cout << "So sad you couldn't find the hidden number, it was " << random2 << "\nYou lost!!\n\n";
+                    }
+                }
+            }
+            cout << "Wanna play again to win the game 'y' or 'n':\n";
+            cin >> rep_game;
+        }
+        else if (diffchoice == 3)
+        {
+            cout << "\nYou have 6 chances for finding the hidden number between 1 to 100" << endl;
+            int choicesleft = 6;
+            for (int i = 0; i < 6; i++)
+            {
+                cout << "Enter the number: ";
+                cin >> playerchoice;
+                if (playerchoice == random2)
+                {
+                    cout << "Well played champ! You win, " << playerchoice << " is the secret number" << endl;
+                    cout << "********Thanks for playing...." << endl;
+                    cout << "Play the game again with us!!\n" << endl;
+                    break;
+                }
+                else
+                {
+                    cout << "No " << playerchoice << " is not the right number\n";
+                    if (playerchoice > random2)
+                    {
+                        cout << "The secret number is smaller than the number you have guessed" << endl;
+                    }
+                    else
+                    {
+                        cout << "The secret number is greater than the number you have guessed" << endl;
+                    }
+                    choicesleft--;
+                    cout << choicesleft << " choices left.\n";
+                    if (choicesleft == 0)
+                    {
+                        cout << "So sad you couldn't find the hidden number, it was " << random2 << "\nYou lost!!\n\n";
+                    }
+                }
+            }
+            cout << "Wanna play again to win the game 'y' or 'n':\n";
+            cin >> rep_game;
+        }
+        else if (diffchoice == 0)
+        {
+            cout << "The game is terminated" << endl;
+            exit(0);
+        }
+        else
+        {
+            cout << "None of your choices are correct! Kindly enter the valid choices (0, 1, 2, 3) to play the game";
+            cout << "Wanna play again to win the game 'y' or 'n':\n";
+            cin >> rep_game;
+        }
+    }
+    return 0;
+}
 
